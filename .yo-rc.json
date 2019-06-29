@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "Masharubu",
+    "packageName": "ke.co.marvelsoft.masharubu",
+    "packageFolder": "ke/co/marvelsoft/masharubu",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.1.2",
+    "jwtSecretKey": "ODY2MzJkZDk2Y2VkNDc2NjI3ZmJiZjk3NmZmMmRlNDIzYmIwM2Y1YjYwMjk4YzJlZDZhNWU1MzVjNmZhZmZhOTM4Y2QzN2E3ZDcyYjEzNjk0MjkzMDdjZmE3ZDUwNWMyOTk1ZTljYjg4NjlhZjAyMjVlYTkwYTljZTgyYzg4YTQ=",
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "mnyonji",
+  "repository-name": "masharubu"
+}
