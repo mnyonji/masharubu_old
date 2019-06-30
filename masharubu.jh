@@ -17,7 +17,9 @@ entity TourOperator {
 	phoneNbr String required maxlength(20),
     emilAddr String required maxlength(100),
     status Status required,
+	createdBy Integer required,
     dateCreated ZonedDateTime,
+    validatedBy Integer required,
     dateValidated ZonedDateTime,
     PhysicalAddress String required
 }
@@ -28,7 +30,9 @@ entity Driver {
     emailAddr String required maxlength(100),
     gender Gender required,
     status Status required,
+	createdBy Integer required,
     dateCreated ZonedDateTime,
+	validatedBy Integer required,
     dateValidated ZonedDateTime
 }
 
@@ -71,14 +75,10 @@ relationship ManyToOne {
 
 relationship OneToOne {
 	Driver{user(login)} to User
-	Driver{createdBy(login)} to User
-	Driver{validatedBy(login)} to User
 }
 
 relationship OneToOne {
 	TourOperator{user(login)} to User
-	TourOperator{createdBy(login)} to User
-	TourOperator{validatedBy(login)} to User
 }
 
 paginate * with pagination
