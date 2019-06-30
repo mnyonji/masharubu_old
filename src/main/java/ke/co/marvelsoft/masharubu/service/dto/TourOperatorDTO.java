@@ -37,6 +37,10 @@ public class TourOperatorDTO implements Serializable {
     private String physicalAddress;
 
 
+    private Long userId;
+
+    private String userLogin;
+
     public Long getId() {
         return id;
     }
@@ -109,6 +113,22 @@ public class TourOperatorDTO implements Serializable {
         this.physicalAddress = physicalAddress;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getUserLogin() {
+        return userLogin;
+    }
+
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -142,6 +162,8 @@ public class TourOperatorDTO implements Serializable {
             ", validatedBy=" + getValidatedBy() +
             ", dateValidated='" + getDateValidated() + "'" +
             ", physicalAddress='" + getPhysicalAddress() + "'" +
+            ", user=" + getUserId() +
+            ", user='" + getUserLogin() + "'" +
             "}";
     }
 }

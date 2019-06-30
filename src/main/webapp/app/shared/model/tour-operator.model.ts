@@ -17,6 +17,8 @@ export interface ITourOperator {
   validatedBy?: number;
   dateValidated?: Moment;
   physicalAddress?: string;
+  userLogin?: string;
+  userId?: number;
 }
 
 export class TourOperator implements ITourOperator {
@@ -29,6 +31,8 @@ export class TourOperator implements ITourOperator {
     public dateCreated?: Moment,
     public validatedBy?: number,
     public dateValidated?: Moment,
-    public physicalAddress?: string
+    public physicalAddress?: string,
+    public userLogin?: string,
+    public userId?: number
   ) {}
 }
