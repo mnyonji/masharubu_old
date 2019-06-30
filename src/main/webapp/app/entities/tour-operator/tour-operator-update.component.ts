@@ -27,10 +27,11 @@ export class TourOperatorUpdateComponent implements OnInit {
     emilAddr: [null, [Validators.required, Validators.maxLength(100)]],
     status: [null, [Validators.required]],
     dateCreated: [],
-    validatedBy: [],
     dateValidated: [],
     physicalAddress: [null, [Validators.required]],
-    userId: []
+    userId: [],
+    createdById: [],
+    validatedById: []
   });
 
   constructor(
@@ -63,10 +64,11 @@ export class TourOperatorUpdateComponent implements OnInit {
       emilAddr: tourOperator.emilAddr,
       status: tourOperator.status,
       dateCreated: tourOperator.dateCreated != null ? tourOperator.dateCreated.format(DATE_TIME_FORMAT) : null,
-      validatedBy: tourOperator.validatedBy,
       dateValidated: tourOperator.dateValidated != null ? tourOperator.dateValidated.format(DATE_TIME_FORMAT) : null,
       physicalAddress: tourOperator.physicalAddress,
-      userId: tourOperator.userId
+      userId: tourOperator.userId,
+      createdById: tourOperator.createdById,
+      validatedById: tourOperator.validatedById
     });
   }
 
@@ -94,13 +96,14 @@ export class TourOperatorUpdateComponent implements OnInit {
       status: this.editForm.get(['status']).value,
       dateCreated:
         this.editForm.get(['dateCreated']).value != null ? moment(this.editForm.get(['dateCreated']).value, DATE_TIME_FORMAT) : undefined,
-      validatedBy: this.editForm.get(['validatedBy']).value,
       dateValidated:
         this.editForm.get(['dateValidated']).value != null
           ? moment(this.editForm.get(['dateValidated']).value, DATE_TIME_FORMAT)
           : undefined,
       physicalAddress: this.editForm.get(['physicalAddress']).value,
-      userId: this.editForm.get(['userId']).value
+      userId: this.editForm.get(['userId']).value,
+      createdById: this.editForm.get(['createdById']).value,
+      validatedById: this.editForm.get(['validatedById']).value
     };
   }
 

@@ -29,8 +29,6 @@ public class TourOperatorDTO implements Serializable {
 
     private ZonedDateTime dateCreated;
 
-    private Integer validatedBy;
-
     private ZonedDateTime dateValidated;
 
     @NotNull
@@ -40,6 +38,14 @@ public class TourOperatorDTO implements Serializable {
     private Long userId;
 
     private String userLogin;
+
+    private Long createdById;
+
+    private String createdByLogin;
+
+    private Long validatedById;
+
+    private String validatedByLogin;
 
     public Long getId() {
         return id;
@@ -89,14 +95,6 @@ public class TourOperatorDTO implements Serializable {
         this.dateCreated = dateCreated;
     }
 
-    public Integer getValidatedBy() {
-        return validatedBy;
-    }
-
-    public void setValidatedBy(Integer validatedBy) {
-        this.validatedBy = validatedBy;
-    }
-
     public ZonedDateTime getDateValidated() {
         return dateValidated;
     }
@@ -129,6 +127,38 @@ public class TourOperatorDTO implements Serializable {
         this.userLogin = userLogin;
     }
 
+    public Long getCreatedById() {
+        return createdById;
+    }
+
+    public void setCreatedById(Long userId) {
+        this.createdById = userId;
+    }
+
+    public String getCreatedByLogin() {
+        return createdByLogin;
+    }
+
+    public void setCreatedByLogin(String userLogin) {
+        this.createdByLogin = userLogin;
+    }
+
+    public Long getValidatedById() {
+        return validatedById;
+    }
+
+    public void setValidatedById(Long userId) {
+        this.validatedById = userId;
+    }
+
+    public String getValidatedByLogin() {
+        return validatedByLogin;
+    }
+
+    public void setValidatedByLogin(String userLogin) {
+        this.validatedByLogin = userLogin;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -159,11 +189,14 @@ public class TourOperatorDTO implements Serializable {
             ", emilAddr='" + getEmilAddr() + "'" +
             ", status='" + getStatus() + "'" +
             ", dateCreated='" + getDateCreated() + "'" +
-            ", validatedBy=" + getValidatedBy() +
             ", dateValidated='" + getDateValidated() + "'" +
             ", physicalAddress='" + getPhysicalAddress() + "'" +
             ", user=" + getUserId() +
             ", user='" + getUserLogin() + "'" +
+            ", createdBy=" + getCreatedById() +
+            ", createdBy='" + getCreatedByLogin() + "'" +
+            ", validatedBy=" + getValidatedById() +
+            ", validatedBy='" + getValidatedByLogin() + "'" +
             "}";
     }
 }

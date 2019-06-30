@@ -74,7 +74,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20190630130633",
+    "changelogDate": "20190630132542",
     "entityTableName": "driver",
     "dto": "mapstruct",
     "pagination": "pagination",

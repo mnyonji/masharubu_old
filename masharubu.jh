@@ -18,7 +18,6 @@ entity TourOperator {
     emilAddr String required maxlength(100),
     status Status required,
     dateCreated ZonedDateTime,
-    validatedBy Integer,
     dateValidated ZonedDateTime,
     PhysicalAddress String required
 }
@@ -77,6 +76,8 @@ relationship OneToOne {
 
 relationship OneToOne {
 	TourOperator{user(login)} to User
+	TourOperator{createdBy(login)} to User
+	TourOperator{validatedBy(login)} to User
 }
 
 paginate * with pagination

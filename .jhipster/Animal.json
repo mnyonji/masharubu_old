@@ -16,7 +16,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190630130635",
+    "changelogDate": "20190630132544",
     "entityTableName": "animal",
     "dto": "mapstruct",
     "pagination": "pagination",
