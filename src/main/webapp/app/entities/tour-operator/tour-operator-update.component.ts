@@ -3,10 +3,13 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import * as moment from 'moment';
 import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
+import { JhiAlertService } from 'ng-jhipster';
 import { ITourOperator, TourOperator } from 'app/shared/model/tour-operator.model';
 import { TourOperatorService } from './tour-operator.service';
+import { IUser, UserService } from 'app/core';
 
 @Component({
   selector: 'jhi-tour-operator-update',
@@ -14,6 +17,8 @@ import { TourOperatorService } from './tour-operator.service';
 })
 export class TourOperatorUpdateComponent implements OnInit {
   isSaving: boolean;
+
+  users: IUser[];
 
   editForm = this.fb.group({
     id: [],
@@ -24,16 +29,30 @@ export class TourOperatorUpdateComponent implements OnInit {
     dateCreated: [],
     validatedBy: [],
     dateValidated: [],
-    physicalAddress: [null, [Validators.required]]
+    physicalAddress: [null, [Validators.required]],
+    userId: []
   });
 
-  constructor(protected tourOperatorService: TourOperatorService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(
+    protected jhiAlertService: JhiAlertService,
+    protected tourOperatorService: TourOperatorService,
+    protected userService: UserService,
+    protected activatedRoute: ActivatedRoute,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit() {
     this.isSaving = false;
     this.activatedRoute.data.subscribe(({ tourOperator }) => {
       this.updateForm(tourOperator);
     });
+    this.userService
+      .query()
+      .pipe(
+        filter((mayBeOk: HttpResponse<IUser[]>) => mayBeOk.ok),
+        map((response: HttpResponse<IUser[]>) => response.body)
+      )
+      .subscribe((res: IUser[]) => (this.users = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(tourOperator: ITourOperator) {
@@ -46,7 +65,8 @@ export class TourOperatorUpdateComponent implements OnInit {
       dateCreated: tourOperator.dateCreated != null ? tourOperator.dateCreated.format(DATE_TIME_FORMAT) : null,
       validatedBy: tourOperator.validatedBy,
       dateValidated: tourOperator.dateValidated != null ? tourOperator.dateValidated.format(DATE_TIME_FORMAT) : null,
-      physicalAddress: tourOperator.physicalAddress
+      physicalAddress: tourOperator.physicalAddress,
+      userId: tourOperator.userId
     });
   }
 
@@ -79,7 +99,8 @@ export class TourOperatorUpdateComponent implements OnInit {
         this.editForm.get(['dateValidated']).value != null
           ? moment(this.editForm.get(['dateValidated']).value, DATE_TIME_FORMAT)
           : undefined,
-      physicalAddress: this.editForm.get(['physicalAddress']).value
+      physicalAddress: this.editForm.get(['physicalAddress']).value,
+      userId: this.editForm.get(['userId']).value
     };
   }
 
@@ -94,5 +115,12 @@ export class TourOperatorUpdateComponent implements OnInit {
 
   protected onSaveError() {
     this.isSaving = false;
+  }
+  protected onError(errorMessage: string) {
+    this.jhiAlertService.error(errorMessage, null, null);
+  }
+
+  trackUserById(index: number, item: IUser) {
+    return item.id;
   }
 }

@@ -56,8 +56,17 @@
             ]
         }
     ],
-    "relationships": [],
-    "changelogDate": "20190630034522",
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "tourOperator",
+            "relationshipName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190630130632",
     "entityTableName": "tour_operator",
     "dto": "mapstruct",
     "pagination": "pagination",

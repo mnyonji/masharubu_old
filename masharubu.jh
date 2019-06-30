@@ -75,6 +75,10 @@ relationship OneToOne {
 	Driver{user(login)} to User
 }
 
+relationship OneToOne {
+	TourOperator{user(login)} to User
+}
+
 paginate * with pagination
 
 dto * with mapstruct
