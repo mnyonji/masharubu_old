@@ -13,11 +13,17 @@ public interface DriverMapper extends EntityMapper<DriverDTO, Driver> {
 
     @Mapping(source = "user.id", target = "userId")
     @Mapping(source = "user.login", target = "userLogin")
+    @Mapping(source = "createdBy.id", target = "createdById")
+    @Mapping(source = "createdBy.login", target = "createdByLogin")
+    @Mapping(source = "validatedBy.id", target = "validatedById")
+    @Mapping(source = "validatedBy.login", target = "validatedByLogin")
     @Mapping(source = "tourOperator.id", target = "tourOperatorId")
     @Mapping(source = "tourOperator.name", target = "tourOperatorName")
     DriverDTO toDto(Driver driver);
 
     @Mapping(source = "userId", target = "user")
+    @Mapping(source = "createdById", target = "createdBy")
+    @Mapping(source = "validatedById", target = "validatedBy")
     @Mapping(source = "tourOperatorId", target = "tourOperator")
     Driver toEntity(DriverDTO driverDTO);
 

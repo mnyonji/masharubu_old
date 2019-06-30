@@ -24,9 +24,10 @@
             <th jhiSortBy="gender"><span>Gender</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="status"><span>Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dateCreated"><span>Date Created</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="validatedBy"><span>Validated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dateValidated"><span>Date Validated</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="userLogin"><span>User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdByLogin"><span>Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="validatedByLogin"><span>Validated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="tourOperatorName"><span>Tour Operator</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
@@ -40,10 +41,15 @@
                 <td>{{driver.gender}}</td>
                 <td>{{driver.status}}</td>
                 <td>{{driver.dateCreated | date:'medium'}}</td>
-                <td>{{driver.validatedBy}}</td>
                 <td>{{driver.dateValidated | date:'medium'}}</td>
                 <td>
                     {{driver.userLogin}}
+                </td>
+                <td>
+                    {{driver.createdByLogin}}
+                </td>
+                <td>
+                    {{driver.validatedByLogin}}
                 </td>
                 <td>
                     <div *ngIf="driver.tourOperatorId">

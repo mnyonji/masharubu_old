@@ -55,15 +55,20 @@ public class Driver implements Serializable {
     @Column(name = "date_created")
     private ZonedDateTime dateCreated;
 
-    @Column(name = "validated_by")
-    private Integer validatedBy;
-
     @Column(name = "date_validated")
     private ZonedDateTime dateValidated;
 
     @OneToOne
     @JoinColumn(unique = true)
     private User user;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User createdBy;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User validatedBy;
 
     @ManyToOne
     @JsonIgnoreProperties("drivers")
@@ -156,19 +161,6 @@ public class Driver implements Serializable {
         this.dateCreated = dateCreated;
     }
 
-    public Integer getValidatedBy() {
-        return validatedBy;
-    }
-
-    public Driver validatedBy(Integer validatedBy) {
-        this.validatedBy = validatedBy;
-        return this;
-    }
-
-    public void setValidatedBy(Integer validatedBy) {
-        this.validatedBy = validatedBy;
-    }
-
     public ZonedDateTime getDateValidated() {
         return dateValidated;
     }
@@ -193,6 +185,32 @@ public class Driver implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public User getCreatedBy() {
+        return createdBy;
+    }
+
+    public Driver createdBy(User user) {
+        this.createdBy = user;
+        return this;
+    }
+
+    public void setCreatedBy(User user) {
+        this.createdBy = user;
+    }
+
+    public User getValidatedBy() {
+        return validatedBy;
+    }
+
+    public Driver validatedBy(User user) {
+        this.validatedBy = user;
+        return this;
+    }
+
+    public void setValidatedBy(User user) {
+        this.validatedBy = user;
     }
 
     public TourOperator getTourOperator() {
@@ -235,7 +253,6 @@ public class Driver implements Serializable {
             ", gender='" + getGender() + "'" +
             ", status='" + getStatus() + "'" +
             ", dateCreated='" + getDateCreated() + "'" +
-            ", validatedBy=" + getValidatedBy() +
             ", dateValidated='" + getDateValidated() + "'" +
             "}";
     }
