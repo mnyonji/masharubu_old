@@ -27,7 +27,13 @@ public class TourOperatorDTO implements Serializable {
     @NotNull
     private Status status;
 
+    @NotNull
+    private Integer createdBy;
+
     private ZonedDateTime dateCreated;
+
+    @NotNull
+    private Integer validatedBy;
 
     private ZonedDateTime dateValidated;
 
@@ -38,14 +44,6 @@ public class TourOperatorDTO implements Serializable {
     private Long userId;
 
     private String userLogin;
-
-    private Long createdById;
-
-    private String createdByLogin;
-
-    private Long validatedById;
-
-    private String validatedByLogin;
 
     public Long getId() {
         return id;
@@ -87,12 +85,28 @@ public class TourOperatorDTO implements Serializable {
         this.status = status;
     }
 
+    public Integer getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(Integer createdBy) {
+        this.createdBy = createdBy;
+    }
+
     public ZonedDateTime getDateCreated() {
         return dateCreated;
     }
 
     public void setDateCreated(ZonedDateTime dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public Integer getValidatedBy() {
+        return validatedBy;
+    }
+
+    public void setValidatedBy(Integer validatedBy) {
+        this.validatedBy = validatedBy;
     }
 
     public ZonedDateTime getDateValidated() {
@@ -127,38 +141,6 @@ public class TourOperatorDTO implements Serializable {
         this.userLogin = userLogin;
     }
 
-    public Long getCreatedById() {
-        return createdById;
-    }
-
-    public void setCreatedById(Long userId) {
-        this.createdById = userId;
-    }
-
-    public String getCreatedByLogin() {
-        return createdByLogin;
-    }
-
-    public void setCreatedByLogin(String userLogin) {
-        this.createdByLogin = userLogin;
-    }
-
-    public Long getValidatedById() {
-        return validatedById;
-    }
-
-    public void setValidatedById(Long userId) {
-        this.validatedById = userId;
-    }
-
-    public String getValidatedByLogin() {
-        return validatedByLogin;
-    }
-
-    public void setValidatedByLogin(String userLogin) {
-        this.validatedByLogin = userLogin;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -188,15 +170,13 @@ public class TourOperatorDTO implements Serializable {
             ", phoneNbr='" + getPhoneNbr() + "'" +
             ", emilAddr='" + getEmilAddr() + "'" +
             ", status='" + getStatus() + "'" +
+            ", createdBy=" + getCreatedBy() +
             ", dateCreated='" + getDateCreated() + "'" +
+            ", validatedBy=" + getValidatedBy() +
             ", dateValidated='" + getDateValidated() + "'" +
             ", physicalAddress='" + getPhysicalAddress() + "'" +
             ", user=" + getUserId() +
             ", user='" + getUserLogin() + "'" +
-            ", createdBy=" + getCreatedById() +
-            ", createdBy='" + getCreatedByLogin() + "'" +
-            ", validatedBy=" + getValidatedById() +
-            ", validatedBy='" + getValidatedByLogin() + "'" +
             "}";
     }
 }

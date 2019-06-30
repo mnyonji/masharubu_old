@@ -26,12 +26,12 @@ export class TourOperatorUpdateComponent implements OnInit {
     phoneNbr: [null, [Validators.required, Validators.maxLength(20)]],
     emilAddr: [null, [Validators.required, Validators.maxLength(100)]],
     status: [null, [Validators.required]],
+    createdBy: [null, [Validators.required]],
     dateCreated: [],
+    validatedBy: [null, [Validators.required]],
     dateValidated: [],
     physicalAddress: [null, [Validators.required]],
-    userId: [],
-    createdById: [],
-    validatedById: []
+    userId: []
   });
 
   constructor(
@@ -63,12 +63,12 @@ export class TourOperatorUpdateComponent implements OnInit {
       phoneNbr: tourOperator.phoneNbr,
       emilAddr: tourOperator.emilAddr,
       status: tourOperator.status,
+      createdBy: tourOperator.createdBy,
       dateCreated: tourOperator.dateCreated != null ? tourOperator.dateCreated.format(DATE_TIME_FORMAT) : null,
+      validatedBy: tourOperator.validatedBy,
       dateValidated: tourOperator.dateValidated != null ? tourOperator.dateValidated.format(DATE_TIME_FORMAT) : null,
       physicalAddress: tourOperator.physicalAddress,
-      userId: tourOperator.userId,
-      createdById: tourOperator.createdById,
-      validatedById: tourOperator.validatedById
+      userId: tourOperator.userId
     });
   }
 
@@ -94,16 +94,16 @@ export class TourOperatorUpdateComponent implements OnInit {
       phoneNbr: this.editForm.get(['phoneNbr']).value,
       emilAddr: this.editForm.get(['emilAddr']).value,
       status: this.editForm.get(['status']).value,
+      createdBy: this.editForm.get(['createdBy']).value,
       dateCreated:
         this.editForm.get(['dateCreated']).value != null ? moment(this.editForm.get(['dateCreated']).value, DATE_TIME_FORMAT) : undefined,
+      validatedBy: this.editForm.get(['validatedBy']).value,
       dateValidated:
         this.editForm.get(['dateValidated']).value != null
           ? moment(this.editForm.get(['dateValidated']).value, DATE_TIME_FORMAT)
           : undefined,
       physicalAddress: this.editForm.get(['physicalAddress']).value,
-      userId: this.editForm.get(['userId']).value,
-      createdById: this.editForm.get(['createdById']).value,
-      validatedById: this.editForm.get(['validatedById']).value
+      userId: this.editForm.get(['userId']).value
     };
   }
 

@@ -22,12 +22,12 @@
             <th jhiSortBy="phoneNbr"><span>Phone Nbr</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="emilAddr"><span>Emil Addr</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="status"><span>Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span>Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dateCreated"><span>Date Created</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="validatedBy"><span>Validated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dateValidated"><span>Date Validated</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="physicalAddress"><span>Physical Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="userLogin"><span>User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="createdByLogin"><span>Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="validatedByLogin"><span>Validated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -38,17 +38,13 @@
                 <td>{{tourOperator.phoneNbr}}</td>
                 <td>{{tourOperator.emilAddr}}</td>
                 <td>{{tourOperator.status}}</td>
+                <td>{{tourOperator.createdBy}}</td>
                 <td>{{tourOperator.dateCreated | date:'medium'}}</td>
+                <td>{{tourOperator.validatedBy}}</td>
                 <td>{{tourOperator.dateValidated | date:'medium'}}</td>
                 <td>{{tourOperator.physicalAddress}}</td>
                 <td>
                     {{tourOperator.userLogin}}
-                </td>
-                <td>
-                    {{tourOperator.createdByLogin}}
-                </td>
-                <td>
-                    {{tourOperator.validatedByLogin}}
                 </td>
                 <td class="text-right">
                     <div class="btn-group">

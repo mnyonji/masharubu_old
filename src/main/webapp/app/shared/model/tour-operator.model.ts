@@ -13,15 +13,13 @@ export interface ITourOperator {
   phoneNbr?: string;
   emilAddr?: string;
   status?: Status;
+  createdBy?: number;
   dateCreated?: Moment;
+  validatedBy?: number;
   dateValidated?: Moment;
   physicalAddress?: string;
   userLogin?: string;
   userId?: number;
-  createdByLogin?: string;
-  createdById?: number;
-  validatedByLogin?: string;
-  validatedById?: number;
 }
 
 export class TourOperator implements ITourOperator {
@@ -31,14 +29,12 @@ export class TourOperator implements ITourOperator {
     public phoneNbr?: string,
     public emilAddr?: string,
     public status?: Status,
+    public createdBy?: number,
     public dateCreated?: Moment,
+    public validatedBy?: number,
     public dateValidated?: Moment,
     public physicalAddress?: string,
     public userLogin?: string,
-    public userId?: number,
-    public createdByLogin?: string,
-    public createdById?: number,
-    public validatedByLogin?: string,
-    public validatedById?: number
+    public userId?: number
   ) {}
 }

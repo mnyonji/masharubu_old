@@ -13,15 +13,9 @@ public interface TourOperatorMapper extends EntityMapper<TourOperatorDTO, TourOp
 
     @Mapping(source = "user.id", target = "userId")
     @Mapping(source = "user.login", target = "userLogin")
-    @Mapping(source = "createdBy.id", target = "createdById")
-    @Mapping(source = "createdBy.login", target = "createdByLogin")
-    @Mapping(source = "validatedBy.id", target = "validatedById")
-    @Mapping(source = "validatedBy.login", target = "validatedByLogin")
     TourOperatorDTO toDto(TourOperator tourOperator);
 
     @Mapping(source = "userId", target = "user")
-    @Mapping(source = "createdById", target = "createdBy")
-    @Mapping(source = "validatedById", target = "validatedBy")
     TourOperator toEntity(TourOperatorDTO tourOperatorDTO);
 
     default TourOperator fromId(Long id) {

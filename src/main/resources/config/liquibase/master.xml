@@ -44,6 +44,12 @@
     <include file="config/liquibase/changelog/20190630134202_added_entity_Driver.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190630134203_added_entity_Sighting.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190630134204_added_entity_Animal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135635_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135636_added_entity_Park.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135637_added_entity_TourOperator.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135638_added_entity_Driver.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135639_added_entity_Sighting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135640_added_entity_Animal.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20190630032843_added_entity_constraints_Park.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190630032845_added_entity_constraints_Driver.xml" relativeToChangelogFile="false"/>
@@ -63,5 +69,9 @@
     <include file="config/liquibase/changelog/20190630134201_added_entity_constraints_TourOperator.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190630134202_added_entity_constraints_Driver.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190630134203_added_entity_constraints_Sighting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135636_added_entity_constraints_Park.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135637_added_entity_constraints_TourOperator.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135638_added_entity_constraints_Driver.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190630135639_added_entity_constraints_Sighting.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

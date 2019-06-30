@@ -1,11 +1,11 @@
-id;name;phone_nbr;email_addr;gender;status;date_created;date_validated
-1;implementation;Wallis and Futuna;generating;MALE;SUSPENDED;2019-06-29T17:49:53;2019-06-29T19:13:13
-2;lavender;Club backing up;Iran;FEMALE;ACTIVE;2019-06-30T01:18:32;2019-06-29T20:33:00
-3;Licensed Cotton Ball;mindshare Gorgeous;Chips;MALE;ACTIVE;2019-06-30T07:56:43;2019-06-30T00:31:07
-4;microchip;Response invoice;alarm Jamaica;FEMALE;NEW;2019-06-30T13:21:16;2019-06-30T05:29:42
-5;Small;Incredible Fresh Chi;Shoes Music connect;FEMALE;SUSPENDED;2019-06-30T07:26:19;2019-06-30T04:42:34
-6;Personal Loan Account;Cambridgeshire Norfo;Soap Tasty Metal Sausages Outdoors;FEMALE;DEACTIVATED;2019-06-30T00:36:19;2019-06-29T18:00:17
-7;Investment Account parsing invoice;black;yellow;FEMALE;SUSPENDED;2019-06-29T21:20:29;2019-06-30T13:08:29
-8;open-source hybrid;Solomon Islands Doll;Personal Loan Account HTTP;FEMALE;ACTIVE;2019-06-29T13:55:41;2019-06-29T20:08:26
-9;Cotton Robust;user-centric Infrast;Managed Dobra application;MALE;DEACTIVATED;2019-06-30T06:33:25;2019-06-29T16:12:28
-10;streamline;Interactions;Fantastic time-frame Quality;MALE;ACTIVE;2019-06-30T05:48:44;2019-06-30T00:24:41
+id;name;phone_nbr;email_addr;gender;status;created_by;date_created;validated_by;date_validated
+1;Towels Specialist;Utah Computers Small;Brunei Darussalam interface;FEMALE;NEW;19438;2019-06-30T01:11:27;41135;2019-06-30T00:58:06
+2;deposit panel Strategist;card Licensed Cotton;mindshare Gorgeous;FEMALE;DEACTIVATED;69597;2019-06-29T21:25:10;40895;2019-06-30T12:32:48
+3;Corporate;Enterprise-wide Beni;Tuna Response invoice;MALE;SUSPENDED;15864;2019-06-29T19:45:19;12016;2019-06-30T13:35:52
+4;Wooden Ergonomic Steel Gloves;Developer Shoes Musi;Buckinghamshire Hollow Shoes;MALE;SUSPENDED;85648;2019-06-30T00:59:54;65869;2019-06-29T21:31:42
+5;Checking Account;invoice Outdoors New;multi-byte Jamaican Dollar North Carolina;MALE;SUSPENDED;82042;2019-06-29T14:52:30;65148;2019-06-29T16:12:55
+6;black;yellow;Books Generic;FEMALE;ACTIVE;11816;2019-06-29T21:18:51;69673;2019-06-30T05:35:00
+7;Accountability Handmade Cotton Bacon;intermediate Table q;Wyoming interface Cotton;FEMALE;DEACTIVATED;23859;2019-06-30T03:38:51;67984;2019-06-29T19:55:21
+8;compress Fantastic Global;Buckinghamshire mone;Direct;FEMALE;ACTIVE;95060;2019-06-30T02:21:47;57343;2019-06-30T02:06:39
+9;Practical Gorgeous;knowledge user Danis;Data neural Wooden;FEMALE;DEACTIVATED;68803;2019-06-29T19:40:02;83696;2019-06-29T23:06:22
+10;Refined Practical Algerian Dinar;revolutionize;panel Sleek Intelligent;MALE;ACTIVE;98600;2019-06-29T23:44:17;75337;2019-06-30T05:32:17

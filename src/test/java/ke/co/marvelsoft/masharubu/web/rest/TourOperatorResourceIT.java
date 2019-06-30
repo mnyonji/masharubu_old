@@ -54,8 +54,14 @@ public class TourOperatorResourceIT {
     private static final Status DEFAULT_STATUS = Status.NEW;
     private static final Status UPDATED_STATUS = Status.ACTIVE;
 
+    private static final Integer DEFAULT_CREATED_BY = 1;
+    private static final Integer UPDATED_CREATED_BY = 2;
+
     private static final ZonedDateTime DEFAULT_DATE_CREATED = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_DATE_CREATED = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final Integer DEFAULT_VALIDATED_BY = 1;
+    private static final Integer UPDATED_VALIDATED_BY = 2;
 
     private static final ZonedDateTime DEFAULT_DATE_VALIDATED = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_DATE_VALIDATED = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
@@ -115,7 +121,9 @@ public class TourOperatorResourceIT {
             .phoneNbr(DEFAULT_PHONE_NBR)
             .emilAddr(DEFAULT_EMIL_ADDR)
             .status(DEFAULT_STATUS)
+            .createdBy(DEFAULT_CREATED_BY)
             .dateCreated(DEFAULT_DATE_CREATED)
+            .validatedBy(DEFAULT_VALIDATED_BY)
             .dateValidated(DEFAULT_DATE_VALIDATED)
             .physicalAddress(DEFAULT_PHYSICAL_ADDRESS);
         return tourOperator;
@@ -132,7 +140,9 @@ public class TourOperatorResourceIT {
             .phoneNbr(UPDATED_PHONE_NBR)
             .emilAddr(UPDATED_EMIL_ADDR)
             .status(UPDATED_STATUS)
+            .createdBy(UPDATED_CREATED_BY)
             .dateCreated(UPDATED_DATE_CREATED)
+            .validatedBy(UPDATED_VALIDATED_BY)
             .dateValidated(UPDATED_DATE_VALIDATED)
             .physicalAddress(UPDATED_PHYSICAL_ADDRESS);
         return tourOperator;
@@ -163,7 +173,9 @@ public class TourOperatorResourceIT {
         assertThat(testTourOperator.getPhoneNbr()).isEqualTo(DEFAULT_PHONE_NBR);
         assertThat(testTourOperator.getEmilAddr()).isEqualTo(DEFAULT_EMIL_ADDR);
         assertThat(testTourOperator.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testTourOperator.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
         assertThat(testTourOperator.getDateCreated()).isEqualTo(DEFAULT_DATE_CREATED);
+        assertThat(testTourOperator.getValidatedBy()).isEqualTo(DEFAULT_VALIDATED_BY);
         assertThat(testTourOperator.getDateValidated()).isEqualTo(DEFAULT_DATE_VALIDATED);
         assertThat(testTourOperator.getPhysicalAddress()).isEqualTo(DEFAULT_PHYSICAL_ADDRESS);
     }
@@ -267,6 +279,44 @@ public class TourOperatorResourceIT {
 
     @Test
     @Transactional
+    public void checkCreatedByIsRequired() throws Exception {
+        int databaseSizeBeforeTest = tourOperatorRepository.findAll().size();
+        // set the field null
+        tourOperator.setCreatedBy(null);
+
+        // Create the TourOperator, which fails.
+        TourOperatorDTO tourOperatorDTO = tourOperatorMapper.toDto(tourOperator);
+
+        restTourOperatorMockMvc.perform(post("/api/tour-operators")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(tourOperatorDTO)))
+            .andExpect(status().isBadRequest());
+
+        List<TourOperator> tourOperatorList = tourOperatorRepository.findAll();
+        assertThat(tourOperatorList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkValidatedByIsRequired() throws Exception {
+        int databaseSizeBeforeTest = tourOperatorRepository.findAll().size();
+        // set the field null
+        tourOperator.setValidatedBy(null);
+
+        // Create the TourOperator, which fails.
+        TourOperatorDTO tourOperatorDTO = tourOperatorMapper.toDto(tourOperator);
+
+        restTourOperatorMockMvc.perform(post("/api/tour-operators")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(tourOperatorDTO)))
+            .andExpect(status().isBadRequest());
+
+        List<TourOperator> tourOperatorList = tourOperatorRepository.findAll();
+        assertThat(tourOperatorList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void checkPhysicalAddressIsRequired() throws Exception {
         int databaseSizeBeforeTest = tourOperatorRepository.findAll().size();
         // set the field null
@@ -299,7 +349,9 @@ public class TourOperatorResourceIT {
             .andExpect(jsonPath("$.[*].phoneNbr").value(hasItem(DEFAULT_PHONE_NBR.toString())))
             .andExpect(jsonPath("$.[*].emilAddr").value(hasItem(DEFAULT_EMIL_ADDR.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
+            .andExpect(jsonPath("$.[*].createdBy").value(hasItem(DEFAULT_CREATED_BY)))
             .andExpect(jsonPath("$.[*].dateCreated").value(hasItem(sameInstant(DEFAULT_DATE_CREATED))))
+            .andExpect(jsonPath("$.[*].validatedBy").value(hasItem(DEFAULT_VALIDATED_BY)))
             .andExpect(jsonPath("$.[*].dateValidated").value(hasItem(sameInstant(DEFAULT_DATE_VALIDATED))))
             .andExpect(jsonPath("$.[*].physicalAddress").value(hasItem(DEFAULT_PHYSICAL_ADDRESS.toString())));
     }
@@ -319,7 +371,9 @@ public class TourOperatorResourceIT {
             .andExpect(jsonPath("$.phoneNbr").value(DEFAULT_PHONE_NBR.toString()))
             .andExpect(jsonPath("$.emilAddr").value(DEFAULT_EMIL_ADDR.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
+            .andExpect(jsonPath("$.createdBy").value(DEFAULT_CREATED_BY))
             .andExpect(jsonPath("$.dateCreated").value(sameInstant(DEFAULT_DATE_CREATED)))
+            .andExpect(jsonPath("$.validatedBy").value(DEFAULT_VALIDATED_BY))
             .andExpect(jsonPath("$.dateValidated").value(sameInstant(DEFAULT_DATE_VALIDATED)))
             .andExpect(jsonPath("$.physicalAddress").value(DEFAULT_PHYSICAL_ADDRESS.toString()));
     }
@@ -349,7 +403,9 @@ public class TourOperatorResourceIT {
             .phoneNbr(UPDATED_PHONE_NBR)
             .emilAddr(UPDATED_EMIL_ADDR)
             .status(UPDATED_STATUS)
+            .createdBy(UPDATED_CREATED_BY)
             .dateCreated(UPDATED_DATE_CREATED)
+            .validatedBy(UPDATED_VALIDATED_BY)
             .dateValidated(UPDATED_DATE_VALIDATED)
             .physicalAddress(UPDATED_PHYSICAL_ADDRESS);
         TourOperatorDTO tourOperatorDTO = tourOperatorMapper.toDto(updatedTourOperator);
@@ -367,7 +423,9 @@ public class TourOperatorResourceIT {
         assertThat(testTourOperator.getPhoneNbr()).isEqualTo(UPDATED_PHONE_NBR);
         assertThat(testTourOperator.getEmilAddr()).isEqualTo(UPDATED_EMIL_ADDR);
         assertThat(testTourOperator.getStatus()).isEqualTo(UPDATED_STATUS);
+        assertThat(testTourOperator.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
         assertThat(testTourOperator.getDateCreated()).isEqualTo(UPDATED_DATE_CREATED);
+        assertThat(testTourOperator.getValidatedBy()).isEqualTo(UPDATED_VALIDATED_BY);
         assertThat(testTourOperator.getDateValidated()).isEqualTo(UPDATED_DATE_VALIDATED);
         assertThat(testTourOperator.getPhysicalAddress()).isEqualTo(UPDATED_PHYSICAL_ADDRESS);
     }
