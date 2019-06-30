@@ -47,9 +47,6 @@ public class TourOperator implements Serializable {
     @Column(name = "date_created")
     private ZonedDateTime dateCreated;
 
-    @Column(name = "validated_by")
-    private Integer validatedBy;
-
     @Column(name = "date_validated")
     private ZonedDateTime dateValidated;
 
@@ -60,6 +57,14 @@ public class TourOperator implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private User user;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User createdBy;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User validatedBy;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -135,19 +140,6 @@ public class TourOperator implements Serializable {
         this.dateCreated = dateCreated;
     }
 
-    public Integer getValidatedBy() {
-        return validatedBy;
-    }
-
-    public TourOperator validatedBy(Integer validatedBy) {
-        this.validatedBy = validatedBy;
-        return this;
-    }
-
-    public void setValidatedBy(Integer validatedBy) {
-        this.validatedBy = validatedBy;
-    }
-
     public ZonedDateTime getDateValidated() {
         return dateValidated;
     }
@@ -186,6 +178,32 @@ public class TourOperator implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public User getCreatedBy() {
+        return createdBy;
+    }
+
+    public TourOperator createdBy(User user) {
+        this.createdBy = user;
+        return this;
+    }
+
+    public void setCreatedBy(User user) {
+        this.createdBy = user;
+    }
+
+    public User getValidatedBy() {
+        return validatedBy;
+    }
+
+    public TourOperator validatedBy(User user) {
+        this.validatedBy = user;
+        return this;
+    }
+
+    public void setValidatedBy(User user) {
+        this.validatedBy = user;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -213,7 +231,6 @@ public class TourOperator implements Serializable {
             ", emilAddr='" + getEmilAddr() + "'" +
             ", status='" + getStatus() + "'" +
             ", dateCreated='" + getDateCreated() + "'" +
-            ", validatedBy=" + getValidatedBy() +
             ", dateValidated='" + getDateValidated() + "'" +
             ", physicalAddress='" + getPhysicalAddress() + "'" +
             "}";

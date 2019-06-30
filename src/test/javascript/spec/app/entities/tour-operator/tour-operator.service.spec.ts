@@ -27,7 +27,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new TourOperator(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', Status.NEW, currentDate, 0, currentDate, 'AAAAAAA');
+      elemDefault = new TourOperator(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', Status.NEW, currentDate, currentDate, 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -82,7 +82,6 @@ describe('Service Tests', () => {
             emilAddr: 'BBBBBB',
             status: 'BBBBBB',
             dateCreated: currentDate.format(DATE_TIME_FORMAT),
-            validatedBy: 1,
             dateValidated: currentDate.format(DATE_TIME_FORMAT),
             physicalAddress: 'BBBBBB'
           },
@@ -113,7 +112,6 @@ describe('Service Tests', () => {
             emilAddr: 'BBBBBB',
             status: 'BBBBBB',
             dateCreated: currentDate.format(DATE_TIME_FORMAT),
-            validatedBy: 1,
             dateValidated: currentDate.format(DATE_TIME_FORMAT),
             physicalAddress: 'BBBBBB'
           },
