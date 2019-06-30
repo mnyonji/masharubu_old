@@ -29,7 +29,6 @@ entity Driver {
     gender Gender required,
     status Status required,
     dateCreated ZonedDateTime,
-    validatedBy Integer,
     dateValidated ZonedDateTime
 }
 
@@ -72,6 +71,8 @@ relationship ManyToOne {
 
 relationship OneToOne {
 	Driver{user(login)} to User
+	Driver{createdBy(login)} to User
+	Driver{validatedBy(login)} to User
 }
 
 relationship OneToOne {
