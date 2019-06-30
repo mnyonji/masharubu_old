@@ -36,8 +36,8 @@ public class TourOperator implements Serializable {
 
     @NotNull
     @Size(max = 100)
-    @Column(name = "emil_addr", length = 100, nullable = false)
-    private String emilAddr;
+    @Column(name = "email_addr", length = 100, nullable = false)
+    private String emailAddr;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -101,17 +101,17 @@ public class TourOperator implements Serializable {
         this.phoneNbr = phoneNbr;
     }
 
-    public String getEmilAddr() {
-        return emilAddr;
+    public String getEmailAddr() {
+        return emailAddr;
     }
 
-    public TourOperator emilAddr(String emilAddr) {
-        this.emilAddr = emilAddr;
+    public TourOperator emailAddr(String emailAddr) {
+        this.emailAddr = emailAddr;
         return this;
     }
 
-    public void setEmilAddr(String emilAddr) {
-        this.emilAddr = emilAddr;
+    public void setEmailAddr(String emailAddr) {
+        this.emailAddr = emailAddr;
     }
 
     public Status getStatus() {
@@ -228,7 +228,7 @@ public class TourOperator implements Serializable {
             "id=" + getId() +
             ", name='" + getName() + "'" +
             ", phoneNbr='" + getPhoneNbr() + "'" +
-            ", emilAddr='" + getEmilAddr() + "'" +
+            ", emailAddr='" + getEmailAddr() + "'" +
             ", status='" + getStatus() + "'" +
             ", createdBy=" + getCreatedBy() +
             ", dateCreated='" + getDateCreated() + "'" +

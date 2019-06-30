@@ -11,7 +11,7 @@ export interface ITourOperator {
   id?: number;
   name?: string;
   phoneNbr?: string;
-  emilAddr?: string;
+  emailAddr?: string;
   status?: Status;
   createdBy?: number;
   dateCreated?: Moment;
@@ -27,7 +27,7 @@ export class TourOperator implements ITourOperator {
     public id?: number,
     public name?: string,
     public phoneNbr?: string,
-    public emilAddr?: string,
+    public emailAddr?: string,
     public status?: Status,
     public createdBy?: number,
     public dateCreated?: Moment,

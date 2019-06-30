@@ -1,11 +1,11 @@
-id;name;phone_nbr;emil_addr;status;created_by;date_created;validated_by;date_validated;physical_address
-1;facilitate Tasty Concrete Chips Exclusive;Buckinghamshire capa;mission-critical;SUSPENDED;23956;2019-06-29T21:36:24;14489;2019-06-30T01:12:04;Way Dominican Republic
-2;Bulgarian Lev navigate;Re-contextualized;web-enabled invoice withdrawal;ACTIVE;15071;2019-06-30T06:14:41;50819;2019-06-30T09:28:01;Refined Rubber Gloves Algerian Dinar Clothing
-3;open-source turn-key;Sausages;disintermediate Cambridgeshire hacking;NEW;87733;2019-06-29T21:14:41;25794;2019-06-30T08:27:29;Bacon Designer
-4;Equatorial Guinea Vision-oriented;Agent;Human deposit;ACTIVE;84666;2019-06-29T16:24:46;85632;2019-06-29T16:39:12;optical invoice
-5;Marketing;Dynamic Home Loan Ac;Branding;DEACTIVATED;69189;2019-06-30T03:10:52;65196;2019-06-29T14:04:36;Fish
-6;Networked;Fish;payment calculating;SUSPENDED;50881;2019-06-30T05:07:06;63633;2019-06-30T07:34:43;Persevering
-7;Coordinator Cambridgeshire Investor;cross-platform Borde;Libyan Dinar CSS;DEACTIVATED;28077;2019-06-30T00:12:55;2431;2019-06-29T19:29:54;Intelligent Frozen Sausages Villages
-8;Human;back up Factors;architectures;SUSPENDED;30569;2019-06-30T04:42:04;19091;2019-06-29T17:30:58;infrastructure
-9;mesh;Configuration UIC-Fr;Ergonomic Concrete Soap Zambian Kwacha;DEACTIVATED;87737;2019-06-30T06:12:08;74076;2019-06-29T17:34:32;Metal array France
-10;redundant;Synergistic Personal;Borders;NEW;2761;2019-06-30T04:55:46;57886;2019-06-30T11:41:16;North Dakota Garden
+id;name;phone_nbr;email_addr;status;created_by;date_created;validated_by;date_validated;physical_address
+1;facilitate Tasty Concrete Chips Exclusive;Buckinghamshire capa;mission-critical;SUSPENDED;23956;2019-06-30T02:55:29;14489;2019-06-30T06:31:09;Way Dominican Republic
+2;Bulgarian Lev navigate;Re-contextualized;web-enabled invoice withdrawal;NEW;15071;2019-06-30T11:33:47;50819;2019-06-30T14:47:07;Refined Rubber Gloves Algerian Dinar Clothing
+3;open-source turn-key;Sausages;disintermediate Cambridgeshire hacking;ACTIVE;87733;2019-06-30T02:33:47;25794;2019-06-30T13:46:35;Bacon Designer
+4;Equatorial Guinea Vision-oriented;Agent;Human deposit;SUSPENDED;84666;2019-06-29T21:43:52;85632;2019-06-29T21:58:18;optical invoice
+5;Marketing;Dynamic Home Loan Ac;Branding;DEACTIVATED;69189;2019-06-30T08:29:58;65196;2019-06-29T19:23:41;Fish
+6;Networked;Fish;payment calculating;NEW;50881;2019-06-30T10:26:11;63633;2019-06-30T12:53:48;Persevering
+7;Coordinator Cambridgeshire Investor;cross-platform Borde;Libyan Dinar CSS;NEW;28077;2019-06-30T05:32:01;2431;2019-06-30T00:48:59;Intelligent Frozen Sausages Villages
+8;Human;back up Factors;architectures;DEACTIVATED;30569;2019-06-30T10:01:10;19091;2019-06-29T22:50:04;infrastructure
+9;mesh;Configuration UIC-Fr;Ergonomic Concrete Soap Zambian Kwacha;NEW;87737;2019-06-30T11:31:14;74076;2019-06-29T22:53:37;Metal array France
+10;redundant;Synergistic Personal;Borders;DEACTIVATED;2761;2019-06-30T10:14:52;57886;2019-06-30T17:00:22;North Dakota Garden

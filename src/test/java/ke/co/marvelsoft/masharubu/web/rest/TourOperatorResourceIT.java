@@ -48,8 +48,8 @@ public class TourOperatorResourceIT {
     private static final String DEFAULT_PHONE_NBR = "AAAAAAAAAA";
     private static final String UPDATED_PHONE_NBR = "BBBBBBBBBB";
 
-    private static final String DEFAULT_EMIL_ADDR = "AAAAAAAAAA";
-    private static final String UPDATED_EMIL_ADDR = "BBBBBBBBBB";
+    private static final String DEFAULT_EMAIL_ADDR = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL_ADDR = "BBBBBBBBBB";
 
     private static final Status DEFAULT_STATUS = Status.NEW;
     private static final Status UPDATED_STATUS = Status.ACTIVE;
@@ -119,7 +119,7 @@ public class TourOperatorResourceIT {
         TourOperator tourOperator = new TourOperator()
             .name(DEFAULT_NAME)
             .phoneNbr(DEFAULT_PHONE_NBR)
-            .emilAddr(DEFAULT_EMIL_ADDR)
+            .emailAddr(DEFAULT_EMAIL_ADDR)
             .status(DEFAULT_STATUS)
             .createdBy(DEFAULT_CREATED_BY)
             .dateCreated(DEFAULT_DATE_CREATED)
@@ -138,7 +138,7 @@ public class TourOperatorResourceIT {
         TourOperator tourOperator = new TourOperator()
             .name(UPDATED_NAME)
             .phoneNbr(UPDATED_PHONE_NBR)
-            .emilAddr(UPDATED_EMIL_ADDR)
+            .emailAddr(UPDATED_EMAIL_ADDR)
             .status(UPDATED_STATUS)
             .createdBy(UPDATED_CREATED_BY)
             .dateCreated(UPDATED_DATE_CREATED)
@@ -171,7 +171,7 @@ public class TourOperatorResourceIT {
         TourOperator testTourOperator = tourOperatorList.get(tourOperatorList.size() - 1);
         assertThat(testTourOperator.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testTourOperator.getPhoneNbr()).isEqualTo(DEFAULT_PHONE_NBR);
-        assertThat(testTourOperator.getEmilAddr()).isEqualTo(DEFAULT_EMIL_ADDR);
+        assertThat(testTourOperator.getEmailAddr()).isEqualTo(DEFAULT_EMAIL_ADDR);
         assertThat(testTourOperator.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testTourOperator.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
         assertThat(testTourOperator.getDateCreated()).isEqualTo(DEFAULT_DATE_CREATED);
@@ -241,10 +241,10 @@ public class TourOperatorResourceIT {
 
     @Test
     @Transactional
-    public void checkEmilAddrIsRequired() throws Exception {
+    public void checkEmailAddrIsRequired() throws Exception {
         int databaseSizeBeforeTest = tourOperatorRepository.findAll().size();
         // set the field null
-        tourOperator.setEmilAddr(null);
+        tourOperator.setEmailAddr(null);
 
         // Create the TourOperator, which fails.
         TourOperatorDTO tourOperatorDTO = tourOperatorMapper.toDto(tourOperator);
@@ -347,7 +347,7 @@ public class TourOperatorResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(tourOperator.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].phoneNbr").value(hasItem(DEFAULT_PHONE_NBR.toString())))
-            .andExpect(jsonPath("$.[*].emilAddr").value(hasItem(DEFAULT_EMIL_ADDR.toString())))
+            .andExpect(jsonPath("$.[*].emailAddr").value(hasItem(DEFAULT_EMAIL_ADDR.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].createdBy").value(hasItem(DEFAULT_CREATED_BY)))
             .andExpect(jsonPath("$.[*].dateCreated").value(hasItem(sameInstant(DEFAULT_DATE_CREATED))))
@@ -369,7 +369,7 @@ public class TourOperatorResourceIT {
             .andExpect(jsonPath("$.id").value(tourOperator.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
             .andExpect(jsonPath("$.phoneNbr").value(DEFAULT_PHONE_NBR.toString()))
-            .andExpect(jsonPath("$.emilAddr").value(DEFAULT_EMIL_ADDR.toString()))
+            .andExpect(jsonPath("$.emailAddr").value(DEFAULT_EMAIL_ADDR.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
             .andExpect(jsonPath("$.createdBy").value(DEFAULT_CREATED_BY))
             .andExpect(jsonPath("$.dateCreated").value(sameInstant(DEFAULT_DATE_CREATED)))
@@ -401,7 +401,7 @@ public class TourOperatorResourceIT {
         updatedTourOperator
             .name(UPDATED_NAME)
             .phoneNbr(UPDATED_PHONE_NBR)
-            .emilAddr(UPDATED_EMIL_ADDR)
+            .emailAddr(UPDATED_EMAIL_ADDR)
             .status(UPDATED_STATUS)
             .createdBy(UPDATED_CREATED_BY)
             .dateCreated(UPDATED_DATE_CREATED)
@@ -421,7 +421,7 @@ public class TourOperatorResourceIT {
         TourOperator testTourOperator = tourOperatorList.get(tourOperatorList.size() - 1);
         assertThat(testTourOperator.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testTourOperator.getPhoneNbr()).isEqualTo(UPDATED_PHONE_NBR);
-        assertThat(testTourOperator.getEmilAddr()).isEqualTo(UPDATED_EMIL_ADDR);
+        assertThat(testTourOperator.getEmailAddr()).isEqualTo(UPDATED_EMAIL_ADDR);
         assertThat(testTourOperator.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testTourOperator.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
         assertThat(testTourOperator.getDateCreated()).isEqualTo(UPDATED_DATE_CREATED);
