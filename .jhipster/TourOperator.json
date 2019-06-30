@@ -57,7 +57,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190630032844",
+    "changelogDate": "20190630034522",
     "entityTableName": "tour_operator",
     "dto": "mapstruct",
     "pagination": "pagination",
