@@ -20,10 +20,13 @@ export interface IDriver {
   gender?: Gender;
   status?: Status;
   dateCreated?: Moment;
-  validatedBy?: number;
   dateValidated?: Moment;
   userLogin?: string;
   userId?: number;
+  createdByLogin?: string;
+  createdById?: number;
+  validatedByLogin?: string;
+  validatedById?: number;
   tourOperatorName?: string;
   tourOperatorId?: number;
 }
@@ -37,10 +40,13 @@ export class Driver implements IDriver {
     public gender?: Gender,
     public status?: Status,
     public dateCreated?: Moment,
-    public validatedBy?: number,
     public dateValidated?: Moment,
     public userLogin?: string,
     public userId?: number,
+    public createdByLogin?: string,
+    public createdById?: number,
+    public validatedByLogin?: string,
+    public validatedById?: number,
     public tourOperatorName?: string,
     public tourOperatorId?: number
   ) {}

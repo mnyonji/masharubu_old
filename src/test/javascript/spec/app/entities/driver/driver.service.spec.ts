@@ -27,7 +27,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Driver(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', Gender.MALE, Status.NEW, currentDate, 0, currentDate);
+      elemDefault = new Driver(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', Gender.MALE, Status.NEW, currentDate, currentDate);
     });
 
     describe('Service methods', () => {
@@ -83,7 +83,6 @@ describe('Service Tests', () => {
             gender: 'BBBBBB',
             status: 'BBBBBB',
             dateCreated: currentDate.format(DATE_TIME_FORMAT),
-            validatedBy: 1,
             dateValidated: currentDate.format(DATE_TIME_FORMAT)
           },
           elemDefault
@@ -114,7 +113,6 @@ describe('Service Tests', () => {
             gender: 'BBBBBB',
             status: 'BBBBBB',
             dateCreated: currentDate.format(DATE_TIME_FORMAT),
-            validatedBy: 1,
             dateValidated: currentDate.format(DATE_TIME_FORMAT)
           },
           elemDefault

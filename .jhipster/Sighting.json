@@ -62,7 +62,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20190630132543",
+    "changelogDate": "20190630134203",
     "entityTableName": "sighting",
     "dto": "mapstruct",
     "pagination": "pagination",

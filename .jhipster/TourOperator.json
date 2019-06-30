@@ -78,7 +78,7 @@
             "ownerSide": true
         }
     ],
-    "changelogDate": "20190630132541",
+    "changelogDate": "20190630134201",
     "entityTableName": "tour_operator",
     "dto": "mapstruct",
     "pagination": "pagination",
