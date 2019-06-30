@@ -1,11 +1,11 @@
 id;name;phone_nbr;email_addr;gender;status;created_by;date_created;validated_by;date_validated
-1;Towels Specialist;Utah Computers Small;Brunei Darussalam interface;FEMALE;NEW;19438;2019-06-30T01:11:27;41135;2019-06-30T00:58:06
-2;deposit panel Strategist;card Licensed Cotton;mindshare Gorgeous;FEMALE;DEACTIVATED;69597;2019-06-29T21:25:10;40895;2019-06-30T12:32:48
-3;Corporate;Enterprise-wide Beni;Tuna Response invoice;MALE;SUSPENDED;15864;2019-06-29T19:45:19;12016;2019-06-30T13:35:52
-4;Wooden Ergonomic Steel Gloves;Developer Shoes Musi;Buckinghamshire Hollow Shoes;MALE;SUSPENDED;85648;2019-06-30T00:59:54;65869;2019-06-29T21:31:42
-5;Checking Account;invoice Outdoors New;multi-byte Jamaican Dollar North Carolina;MALE;SUSPENDED;82042;2019-06-29T14:52:30;65148;2019-06-29T16:12:55
-6;black;yellow;Books Generic;FEMALE;ACTIVE;11816;2019-06-29T21:18:51;69673;2019-06-30T05:35:00
-7;Accountability Handmade Cotton Bacon;intermediate Table q;Wyoming interface Cotton;FEMALE;DEACTIVATED;23859;2019-06-30T03:38:51;67984;2019-06-29T19:55:21
-8;compress Fantastic Global;Buckinghamshire mone;Direct;FEMALE;ACTIVE;95060;2019-06-30T02:21:47;57343;2019-06-30T02:06:39
-9;Practical Gorgeous;knowledge user Danis;Data neural Wooden;FEMALE;DEACTIVATED;68803;2019-06-29T19:40:02;83696;2019-06-29T23:06:22
-10;Refined Practical Algerian Dinar;revolutionize;panel Sleek Intelligent;MALE;ACTIVE;98600;2019-06-29T23:44:17;75337;2019-06-30T05:32:17
+1;Towels Specialist;Utah Computers Small;Brunei Darussalam interface;FEMALE;ACTIVE;19438;2019-06-30T06:30:33;41135;2019-06-30T06:17:11
+2;deposit panel Strategist;card Licensed Cotton;mindshare Gorgeous;MALE;NEW;69597;2019-06-30T02:44:16;40895;2019-06-30T17:51:54
+3;Corporate;Enterprise-wide Beni;Tuna Response invoice;MALE;SUSPENDED;15864;2019-06-30T01:04:25;12016;2019-06-30T18:54:58
+4;Wooden Ergonomic Steel Gloves;Developer Shoes Musi;Buckinghamshire Hollow Shoes;FEMALE;DEACTIVATED;85648;2019-06-30T06:19:00;65869;2019-06-30T02:50:48
+5;Checking Account;invoice Outdoors New;multi-byte Jamaican Dollar North Carolina;MALE;NEW;82042;2019-06-29T20:11:36;65148;2019-06-29T21:32:00
+6;black;yellow;Books Generic;FEMALE;ACTIVE;11816;2019-06-30T02:37:57;69673;2019-06-30T10:54:06
+7;Accountability Handmade Cotton Bacon;intermediate Table q;Wyoming interface Cotton;MALE;NEW;23859;2019-06-30T08:57:57;67984;2019-06-30T01:14:27
+8;compress Fantastic Global;Buckinghamshire mone;Direct;FEMALE;NEW;95060;2019-06-30T07:40:52;57343;2019-06-30T07:25:45
+9;Practical Gorgeous;knowledge user Danis;Data neural Wooden;FEMALE;ACTIVE;68803;2019-06-30T00:59:08;83696;2019-06-30T04:25:28
+10;Refined Practical Algerian Dinar;revolutionize;panel Sleek Intelligent;FEMALE;DEACTIVATED;98600;2019-06-30T05:03:23;75337;2019-06-30T10:51:23

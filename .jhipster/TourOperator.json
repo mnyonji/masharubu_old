@@ -20,7 +20,7 @@
             "fieldValidateRulesMaxlength": 20
         },
         {
-            "fieldName": "emilAddr",
+            "fieldName": "emailAddr",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",
@@ -76,7 +76,7 @@
             "ownerSide": true
         }
     ],
-    "changelogDate": "20190630135637",
+    "changelogDate": "20190630191543",
     "entityTableName": "tour_operator",
     "dto": "mapstruct",
     "pagination": "pagination",

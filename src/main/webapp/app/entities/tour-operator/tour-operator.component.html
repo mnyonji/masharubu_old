@@ -20,7 +20,7 @@
             <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="name"><span>Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="phoneNbr"><span>Phone Nbr</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="emilAddr"><span>Emil Addr</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="emailAddr"><span>Email Addr</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="status"><span>Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="createdBy"><span>Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dateCreated"><span>Date Created</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -36,7 +36,7 @@
                 <td><a [routerLink]="['/tour-operator', tourOperator.id, 'view' ]">{{tourOperator.id}}</a></td>
                 <td>{{tourOperator.name}}</td>
                 <td>{{tourOperator.phoneNbr}}</td>
-                <td>{{tourOperator.emilAddr}}</td>
+                <td>{{tourOperator.emailAddr}}</td>
                 <td>{{tourOperator.status}}</td>
                 <td>{{tourOperator.createdBy}}</td>
                 <td>{{tourOperator.dateCreated | date:'medium'}}</td>

@@ -22,7 +22,7 @@ public class TourOperatorDTO implements Serializable {
 
     @NotNull
     @Size(max = 100)
-    private String emilAddr;
+    private String emailAddr;
 
     @NotNull
     private Status status;
@@ -69,12 +69,12 @@ public class TourOperatorDTO implements Serializable {
         this.phoneNbr = phoneNbr;
     }
 
-    public String getEmilAddr() {
-        return emilAddr;
+    public String getEmailAddr() {
+        return emailAddr;
     }
 
-    public void setEmilAddr(String emilAddr) {
-        this.emilAddr = emilAddr;
+    public void setEmailAddr(String emailAddr) {
+        this.emailAddr = emailAddr;
     }
 
     public Status getStatus() {
@@ -168,7 +168,7 @@ public class TourOperatorDTO implements Serializable {
             "id=" + getId() +
             ", name='" + getName() + "'" +
             ", phoneNbr='" + getPhoneNbr() + "'" +
-            ", emilAddr='" + getEmilAddr() + "'" +
+            ", emailAddr='" + getEmailAddr() + "'" +
             ", status='" + getStatus() + "'" +
             ", createdBy=" + getCreatedBy() +
             ", dateCreated='" + getDateCreated() + "'" +

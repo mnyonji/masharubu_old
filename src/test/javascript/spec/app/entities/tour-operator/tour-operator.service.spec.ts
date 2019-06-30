@@ -79,7 +79,7 @@ describe('Service Tests', () => {
           {
             name: 'BBBBBB',
             phoneNbr: 'BBBBBB',
-            emilAddr: 'BBBBBB',
+            emailAddr: 'BBBBBB',
             status: 'BBBBBB',
             createdBy: 1,
             dateCreated: currentDate.format(DATE_TIME_FORMAT),
@@ -111,7 +111,7 @@ describe('Service Tests', () => {
           {
             name: 'BBBBBB',
             phoneNbr: 'BBBBBB',
-            emilAddr: 'BBBBBB',
+            emailAddr: 'BBBBBB',
             status: 'BBBBBB',
             createdBy: 1,
             dateCreated: currentDate.format(DATE_TIME_FORMAT),
