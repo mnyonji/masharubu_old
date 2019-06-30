@@ -31,11 +31,11 @@ export class DriverUpdateComponent implements OnInit {
     emailAddr: [null, [Validators.required, Validators.maxLength(100)]],
     gender: [null, [Validators.required]],
     status: [null, [Validators.required]],
+    createdBy: [null, [Validators.required]],
     dateCreated: [],
+    validatedBy: [null, [Validators.required]],
     dateValidated: [],
     userId: [],
-    createdById: [],
-    validatedById: [],
     tourOperatorId: []
   });
 
@@ -77,11 +77,11 @@ export class DriverUpdateComponent implements OnInit {
       emailAddr: driver.emailAddr,
       gender: driver.gender,
       status: driver.status,
+      createdBy: driver.createdBy,
       dateCreated: driver.dateCreated != null ? driver.dateCreated.format(DATE_TIME_FORMAT) : null,
+      validatedBy: driver.validatedBy,
       dateValidated: driver.dateValidated != null ? driver.dateValidated.format(DATE_TIME_FORMAT) : null,
       userId: driver.userId,
-      createdById: driver.createdById,
-      validatedById: driver.validatedById,
       tourOperatorId: driver.tourOperatorId
     });
   }
@@ -109,15 +109,15 @@ export class DriverUpdateComponent implements OnInit {
       emailAddr: this.editForm.get(['emailAddr']).value,
       gender: this.editForm.get(['gender']).value,
       status: this.editForm.get(['status']).value,
+      createdBy: this.editForm.get(['createdBy']).value,
       dateCreated:
         this.editForm.get(['dateCreated']).value != null ? moment(this.editForm.get(['dateCreated']).value, DATE_TIME_FORMAT) : undefined,
+      validatedBy: this.editForm.get(['validatedBy']).value,
       dateValidated:
         this.editForm.get(['dateValidated']).value != null
           ? moment(this.editForm.get(['dateValidated']).value, DATE_TIME_FORMAT)
           : undefined,
       userId: this.editForm.get(['userId']).value,
-      createdById: this.editForm.get(['createdById']).value,
-      validatedById: this.editForm.get(['validatedById']).value,
       tourOperatorId: this.editForm.get(['tourOperatorId']).value
     };
   }

@@ -31,7 +31,13 @@ public class DriverDTO implements Serializable {
     @NotNull
     private Status status;
 
+    @NotNull
+    private Integer createdBy;
+
     private ZonedDateTime dateCreated;
+
+    @NotNull
+    private Integer validatedBy;
 
     private ZonedDateTime dateValidated;
 
@@ -39,14 +45,6 @@ public class DriverDTO implements Serializable {
     private Long userId;
 
     private String userLogin;
-
-    private Long createdById;
-
-    private String createdByLogin;
-
-    private Long validatedById;
-
-    private String validatedByLogin;
 
     private Long tourOperatorId;
 
@@ -100,12 +98,28 @@ public class DriverDTO implements Serializable {
         this.status = status;
     }
 
+    public Integer getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(Integer createdBy) {
+        this.createdBy = createdBy;
+    }
+
     public ZonedDateTime getDateCreated() {
         return dateCreated;
     }
 
     public void setDateCreated(ZonedDateTime dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public Integer getValidatedBy() {
+        return validatedBy;
+    }
+
+    public void setValidatedBy(Integer validatedBy) {
+        this.validatedBy = validatedBy;
     }
 
     public ZonedDateTime getDateValidated() {
@@ -130,38 +144,6 @@ public class DriverDTO implements Serializable {
 
     public void setUserLogin(String userLogin) {
         this.userLogin = userLogin;
-    }
-
-    public Long getCreatedById() {
-        return createdById;
-    }
-
-    public void setCreatedById(Long userId) {
-        this.createdById = userId;
-    }
-
-    public String getCreatedByLogin() {
-        return createdByLogin;
-    }
-
-    public void setCreatedByLogin(String userLogin) {
-        this.createdByLogin = userLogin;
-    }
-
-    public Long getValidatedById() {
-        return validatedById;
-    }
-
-    public void setValidatedById(Long userId) {
-        this.validatedById = userId;
-    }
-
-    public String getValidatedByLogin() {
-        return validatedByLogin;
-    }
-
-    public void setValidatedByLogin(String userLogin) {
-        this.validatedByLogin = userLogin;
     }
 
     public Long getTourOperatorId() {
@@ -210,14 +192,12 @@ public class DriverDTO implements Serializable {
             ", emailAddr='" + getEmailAddr() + "'" +
             ", gender='" + getGender() + "'" +
             ", status='" + getStatus() + "'" +
+            ", createdBy=" + getCreatedBy() +
             ", dateCreated='" + getDateCreated() + "'" +
+            ", validatedBy=" + getValidatedBy() +
             ", dateValidated='" + getDateValidated() + "'" +
             ", user=" + getUserId() +
             ", user='" + getUserLogin() + "'" +
-            ", createdBy=" + getCreatedById() +
-            ", createdBy='" + getCreatedByLogin() + "'" +
-            ", validatedBy=" + getValidatedById() +
-            ", validatedBy='" + getValidatedByLogin() + "'" +
             ", tourOperator=" + getTourOperatorId() +
             ", tourOperator='" + getTourOperatorName() + "'" +
             "}";

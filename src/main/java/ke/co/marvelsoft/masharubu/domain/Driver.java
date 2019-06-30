@@ -52,8 +52,16 @@ public class Driver implements Serializable {
     @Column(name = "status", nullable = false)
     private Status status;
 
+    @NotNull
+    @Column(name = "created_by", nullable = false)
+    private Integer createdBy;
+
     @Column(name = "date_created")
     private ZonedDateTime dateCreated;
+
+    @NotNull
+    @Column(name = "validated_by", nullable = false)
+    private Integer validatedBy;
 
     @Column(name = "date_validated")
     private ZonedDateTime dateValidated;
@@ -61,14 +69,6 @@ public class Driver implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private User user;
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private User createdBy;
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private User validatedBy;
 
     @ManyToOne
     @JsonIgnoreProperties("drivers")
@@ -148,6 +148,19 @@ public class Driver implements Serializable {
         this.status = status;
     }
 
+    public Integer getCreatedBy() {
+        return createdBy;
+    }
+
+    public Driver createdBy(Integer createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
+
+    public void setCreatedBy(Integer createdBy) {
+        this.createdBy = createdBy;
+    }
+
     public ZonedDateTime getDateCreated() {
         return dateCreated;
     }
@@ -159,6 +172,19 @@ public class Driver implements Serializable {
 
     public void setDateCreated(ZonedDateTime dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public Integer getValidatedBy() {
+        return validatedBy;
+    }
+
+    public Driver validatedBy(Integer validatedBy) {
+        this.validatedBy = validatedBy;
+        return this;
+    }
+
+    public void setValidatedBy(Integer validatedBy) {
+        this.validatedBy = validatedBy;
     }
 
     public ZonedDateTime getDateValidated() {
@@ -185,32 +211,6 @@ public class Driver implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public User getCreatedBy() {
-        return createdBy;
-    }
-
-    public Driver createdBy(User user) {
-        this.createdBy = user;
-        return this;
-    }
-
-    public void setCreatedBy(User user) {
-        this.createdBy = user;
-    }
-
-    public User getValidatedBy() {
-        return validatedBy;
-    }
-
-    public Driver validatedBy(User user) {
-        this.validatedBy = user;
-        return this;
-    }
-
-    public void setValidatedBy(User user) {
-        this.validatedBy = user;
     }
 
     public TourOperator getTourOperator() {
@@ -252,7 +252,9 @@ public class Driver implements Serializable {
             ", emailAddr='" + getEmailAddr() + "'" +
             ", gender='" + getGender() + "'" +
             ", status='" + getStatus() + "'" +
+            ", createdBy=" + getCreatedBy() +
             ", dateCreated='" + getDateCreated() + "'" +
+            ", validatedBy=" + getValidatedBy() +
             ", dateValidated='" + getDateValidated() + "'" +
             "}";
     }

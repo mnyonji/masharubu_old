@@ -45,8 +45,22 @@
             ]
         },
         {
+            "fieldName": "createdBy",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
             "fieldName": "dateCreated",
             "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "validatedBy",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
         },
         {
             "fieldName": "dateValidated",
@@ -63,22 +77,6 @@
             "ownerSide": true
         },
         {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "user",
-            "otherEntityRelationshipName": "driver",
-            "relationshipName": "createdBy",
-            "otherEntityField": "login",
-            "ownerSide": true
-        },
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "user",
-            "otherEntityRelationshipName": "driver",
-            "relationshipName": "validatedBy",
-            "otherEntityField": "login",
-            "ownerSide": true
-        },
-        {
             "relationshipType": "many-to-one",
             "otherEntityName": "tourOperator",
             "otherEntityRelationshipName": "driver",
@@ -86,7 +84,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20190630134202",
+    "changelogDate": "20190630135638",
     "entityTableName": "driver",
     "dto": "mapstruct",
     "pagination": "pagination",

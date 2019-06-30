@@ -83,9 +83,39 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="form-control-label" for="field_createdBy">Created By</label>
+                    <input type="number" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy').invalid && (editForm.get('createdBy').dirty || editForm.get('createdBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy').errors.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('createdBy')?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="form-control-label" for="field_dateCreated">Date Created</label>
                     <div class="d-flex">
                         <input id="field_dateCreated" type="datetime-local" class="form-control" name="dateCreated" formControlName="dateCreated" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_validatedBy">Validated By</label>
+                    <input type="number" class="form-control" name="validatedBy" id="field_validatedBy"
+                           formControlName="validatedBy"/>
+                    <div *ngIf="editForm.get('validatedBy').invalid && (editForm.get('validatedBy').dirty || editForm.get('validatedBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('validatedBy').errors.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('validatedBy')?.errors?.number">
+                            This field should be a number.
+                        </small>
                     </div>
                 </div>
                 <div class="form-group">
@@ -98,20 +128,6 @@
                 <div class="form-group">
                     <label class="form-control-label" for="field_user">User</label>
                     <select class="form-control" id="field_user" name="user" formControlName="userId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" for="field_createdBy">Created By</label>
-                    <select class="form-control" id="field_createdBy" name="createdBy" formControlName="createdById">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" for="field_validatedBy">Validated By</label>
-                    <select class="form-control" id="field_validatedBy" name="validatedBy" formControlName="validatedById">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
                     </select>

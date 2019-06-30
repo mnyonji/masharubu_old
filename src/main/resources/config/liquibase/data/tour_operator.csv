@@ -1,11 +1,11 @@
-id;name;phone_nbr;emil_addr;status;date_created;date_validated;physical_address
-1;facilitate Tasty Concrete Chips Exclusive;Buckinghamshire capa;mission-critical;DEACTIVATED;2019-06-30T07:57:02;2019-06-29T21:21:48;Lebanon
-2;Designer Persistent;Handmade 24/7 Re-con;web-enabled invoice withdrawal;SUSPENDED;2019-06-30T10:04:58;2019-06-30T06:00:05;magenta Refined Rubber Gloves
-3;red firewall open-source;deposit Sausages;disintermediate Cambridgeshire hacking;NEW;2019-06-29T16:38:39;2019-06-29T21:00:05;Profound
-4;parsing;Borders content-base;Tasty Customer Human;ACTIVE;2019-06-29T20:53:30;2019-06-29T20:16:38;Internal AI optical
-5;bypassing Marketing;Dynamic Home Loan Ac;Branding;NEW;2019-06-29T21:05:41;2019-06-30T02:56:16;Manager Fish
-6;Networked;Fish;payment calculating;NEW;2019-06-30T01:29:19;2019-06-30T04:52:30;dedicated Persevering
-7;Coordinator Cambridgeshire Investor;cross-platform Borde;Libyan Dinar CSS;SUSPENDED;2019-06-30T06:57:41;2019-06-29T23:58:19;calculate
-8;Chips;Villages uniform PCI;Automotive Tactics architectures;NEW;2019-06-30T06:21:48;2019-06-30T04:27:28;compressing
-9;Bedfordshire;Maryland Configurati;Intranet Ergonomic Concrete Soap Zambian Kwacha;ACTIVE;2019-06-29T16:38:36;2019-06-30T05:57:32;calculating Metal array
-10;discrete redundant;Synergistic Personal;Borders;ACTIVE;2019-06-30T13:02:14;2019-06-30T04:41:10;Practical North Dakota
+id;name;phone_nbr;emil_addr;status;created_by;date_created;validated_by;date_validated;physical_address
+1;facilitate Tasty Concrete Chips Exclusive;Buckinghamshire capa;mission-critical;SUSPENDED;23956;2019-06-29T21:36:24;14489;2019-06-30T01:12:04;Way Dominican Republic
+2;Bulgarian Lev navigate;Re-contextualized;web-enabled invoice withdrawal;ACTIVE;15071;2019-06-30T06:14:41;50819;2019-06-30T09:28:01;Refined Rubber Gloves Algerian Dinar Clothing
+3;open-source turn-key;Sausages;disintermediate Cambridgeshire hacking;NEW;87733;2019-06-29T21:14:41;25794;2019-06-30T08:27:29;Bacon Designer
+4;Equatorial Guinea Vision-oriented;Agent;Human deposit;ACTIVE;84666;2019-06-29T16:24:46;85632;2019-06-29T16:39:12;optical invoice
+5;Marketing;Dynamic Home Loan Ac;Branding;DEACTIVATED;69189;2019-06-30T03:10:52;65196;2019-06-29T14:04:36;Fish
+6;Networked;Fish;payment calculating;SUSPENDED;50881;2019-06-30T05:07:06;63633;2019-06-30T07:34:43;Persevering
+7;Coordinator Cambridgeshire Investor;cross-platform Borde;Libyan Dinar CSS;DEACTIVATED;28077;2019-06-30T00:12:55;2431;2019-06-29T19:29:54;Intelligent Frozen Sausages Villages
+8;Human;back up Factors;architectures;SUSPENDED;30569;2019-06-30T04:42:04;19091;2019-06-29T17:30:58;infrastructure
+9;mesh;Configuration UIC-Fr;Ergonomic Concrete Soap Zambian Kwacha;DEACTIVATED;87737;2019-06-30T06:12:08;74076;2019-06-29T17:34:32;Metal array France
+10;redundant;Synergistic Personal;Borders;NEW;2761;2019-06-30T04:55:46;57886;2019-06-30T11:41:16;North Dakota Garden

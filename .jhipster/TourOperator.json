@@ -37,8 +37,22 @@
             ]
         },
         {
+            "fieldName": "createdBy",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
             "fieldName": "dateCreated",
             "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "validatedBy",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
         },
         {
             "fieldName": "dateValidated",
@@ -60,25 +74,9 @@
             "relationshipName": "user",
             "otherEntityField": "login",
             "ownerSide": true
-        },
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "user",
-            "otherEntityRelationshipName": "tourOperator",
-            "relationshipName": "createdBy",
-            "otherEntityField": "login",
-            "ownerSide": true
-        },
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "user",
-            "otherEntityRelationshipName": "tourOperator",
-            "relationshipName": "validatedBy",
-            "otherEntityField": "login",
-            "ownerSide": true
         }
     ],
-    "changelogDate": "20190630134201",
+    "changelogDate": "20190630135637",
     "entityTableName": "tour_operator",
     "dto": "mapstruct",
     "pagination": "pagination",
