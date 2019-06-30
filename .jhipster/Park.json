@@ -29,7 +29,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20190630032843",
+    "changelogDate": "20190630034521",
     "entityTableName": "park",
     "dto": "mapstruct",
     "pagination": "pagination",
