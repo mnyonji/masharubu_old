@@ -1,0 +1,98 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import * as moment from 'moment';
+import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
+import { ITourOperator, TourOperator } from 'app/shared/model/tour-operator.model';
+import { TourOperatorService } from './tour-operator.service';
+
+@Component({
+  selector: 'jhi-tour-operator-update',
+  templateUrl: './tour-operator-update.component.html'
+})
+export class TourOperatorUpdateComponent implements OnInit {
+  isSaving: boolean;
+
+  editForm = this.fb.group({
+    id: [],
+    name: [null, [Validators.required, Validators.maxLength(100)]],
+    phoneNbr: [null, [Validators.required, Validators.maxLength(20)]],
+    emilAddr: [null, [Validators.required, Validators.maxLength(100)]],
+    status: [null, [Validators.required]],
+    dateCreated: [],
+    validatedBy: [],
+    dateValidated: [],
+    physicalAddress: [null, [Validators.required]]
+  });
+
+  constructor(protected tourOperatorService: TourOperatorService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.isSaving = false;
+    this.activatedRoute.data.subscribe(({ tourOperator }) => {
+      this.updateForm(tourOperator);
+    });
+  }
+
+  updateForm(tourOperator: ITourOperator) {
+    this.editForm.patchValue({
+      id: tourOperator.id,
+      name: tourOperator.name,
+      phoneNbr: tourOperator.phoneNbr,
+      emilAddr: tourOperator.emilAddr,
+      status: tourOperator.status,
+      dateCreated: tourOperator.dateCreated != null ? tourOperator.dateCreated.format(DATE_TIME_FORMAT) : null,
+      validatedBy: tourOperator.validatedBy,
+      dateValidated: tourOperator.dateValidated != null ? tourOperator.dateValidated.format(DATE_TIME_FORMAT) : null,
+      physicalAddress: tourOperator.physicalAddress
+    });
+  }
+
+  previousState() {
+    window.history.back();
+  }
+
+  save() {
+    this.isSaving = true;
+    const tourOperator = this.createFromForm();
+    if (tourOperator.id !== undefined) {
+      this.subscribeToSaveResponse(this.tourOperatorService.update(tourOperator));
+    } else {
+      this.subscribeToSaveResponse(this.tourOperatorService.create(tourOperator));
+    }
+  }
+
+  private createFromForm(): ITourOperator {
+    return {
+      ...new TourOperator(),
+      id: this.editForm.get(['id']).value,
+      name: this.editForm.get(['name']).value,
+      phoneNbr: this.editForm.get(['phoneNbr']).value,
+      emilAddr: this.editForm.get(['emilAddr']).value,
+      status: this.editForm.get(['status']).value,
+      dateCreated:
+        this.editForm.get(['dateCreated']).value != null ? moment(this.editForm.get(['dateCreated']).value, DATE_TIME_FORMAT) : undefined,
+      validatedBy: this.editForm.get(['validatedBy']).value,
+      dateValidated:
+        this.editForm.get(['dateValidated']).value != null
+          ? moment(this.editForm.get(['dateValidated']).value, DATE_TIME_FORMAT)
+          : undefined,
+      physicalAddress: this.editForm.get(['physicalAddress']).value
+    };
+  }
+
+  protected subscribeToSaveResponse(result: Observable<HttpResponse<ITourOperator>>) {
+    result.subscribe(() => this.onSaveSuccess(), () => this.onSaveError());
+  }
+
+  protected onSaveSuccess() {
+    this.isSaving = false;
+    this.previousState();
+  }
+
+  protected onSaveError() {
+    this.isSaving = false;
+  }
+}
